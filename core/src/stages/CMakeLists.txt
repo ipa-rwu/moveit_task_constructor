@@ -19,6 +19,8 @@ add_library(${PROJECT_NAME}_stages SHARED
 	${PROJECT_INCLUDE}/stages/simple_grasp.h
 	${PROJECT_INCLUDE}/stages/pick.h
 
+	${PROJECT_INCLUDE}/stages/use_io_gripper.h
+
 	modify_planning_scene.cpp
 	fix_collision_objects.cpp
 
@@ -38,6 +40,8 @@ add_library(${PROJECT_NAME}_stages SHARED
 
 	simple_grasp.cpp
 	pick.cpp
+
+	use_io_gripper.cpp
 )
 target_link_libraries(${PROJECT_NAME}_stages ${PROJECT_NAME})
 ament_target_dependencies(${PROJECT_NAME}_stages
@@ -49,6 +53,7 @@ ament_target_dependencies(${PROJECT_NAME}_stages
 	rclcpp
 	tf2_eigen
 	visualization_msgs
+	ur_msgs
 )
 
 add_library(${PROJECT_NAME}_stage_plugins SHARED
